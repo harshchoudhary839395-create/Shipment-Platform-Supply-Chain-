@@ -1,0 +1,143 @@
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 240px;
+  background: #0f172a;
+  color: white;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.brand {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.brand-subtitle {
+  margin: 4px 0 0;
+  color: #94a3b8;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nav-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  background: #1e293b;
+  color: white;
+}
+
+.logout-btn,
+button {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 10px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.main-content {
+  flex: 1;
+  padding: 24px;
+  background: #f8fafc;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #64748b;
+  font-size: 0.8rem;
+  margin: 0 0 6px;
+}
+
+.card-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.card,
+.list-card,
+.auth-card {
+  background: white;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.pill {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.muted {
+  color: #64748b;
+  margin: 2px 0 0;
+}
+
+.auth-card {
+  max-width: 420px;
+  margin: 80px auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+.error {
+  color: #dc2626;
+  font-size: 0.95rem;
+}
+
