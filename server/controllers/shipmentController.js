@@ -35,9 +35,35 @@ const getShipment = asyncHandler(async (req, res) => {
 // @desc    Create new shipment
 // @route   POST /api/shipments
 // @access  Private
+// @desc    Create new shipment
+// @route   POST /api/shipments
+// @access  Private
 const createShipment = asyncHandler(async (req, res) => {
-  const shipment = await Shipment.create(req.body);
-  res.status(201).json({ success: true, data: shipment });
+  try {
+    console.log("========== CREATE SHIPMENT ==========");
+    console.log("Request Body:");
+    console.log(req.body);
+
+    const shipment = await Shipment.create(req.body);
+
+    console.log("Shipment Created:");
+    console.log(shipment);
+
+    res.status(201).json({
+      success: true,
+      data: shipment,
+    });
+  } catch (error) {
+    console.error("========== ERROR ==========");
+    console.error(error);
+    console.error(error.stack);
+
+    res.status(500).json({
+      success: false,
+      message: error.message,
+      stack: error.stack,
+    });
+  }
 });
 
 // @desc    Update shipment details

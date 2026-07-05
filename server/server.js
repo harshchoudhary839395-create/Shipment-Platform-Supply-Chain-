@@ -5,6 +5,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const connectDB = require('./config/db');
+const User = require('./models/User');
 const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 // Route imports
@@ -48,9 +49,26 @@ app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
+const seedDefaultAdmin = async () => {
+  const email = process.env.DEFAULT_ADMIN_EMAIL || 'admin@sami-tech.com';
+  const password = process.env.DEFAULT_ADMIN_PASSWORD || 'Admin1234!';
+
+  const existingUser = await User.findOne({ email });
+  if (!existingUser) {
+    await User.create({
+      name: 'Admin User',
+      email,
+      password,
+      role: 'admin',
+    });
+    console.log(`🌱 Seeded default admin user: ${email}`);
+  }
+};
+
 // Connect to MongoDB and then start the server
 const startServer = async () => {
   await connectDB();
+  await seedDefaultAdmin();
 
   app.listen(PORT, () => {
     console.log(

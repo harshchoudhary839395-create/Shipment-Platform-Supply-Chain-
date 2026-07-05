@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export default function Login() {
   const navigate = useNavigate();
-  const [form, setForm] = useState({ email: '', password: '' });
+  const [form, setForm] = useState({ email: 'admin@sami-tech.com', password: 'Admin1234!' });
   const [error, setError] = useState('');
 
   const handleChange = (e) => {
@@ -32,6 +32,7 @@ export default function Login() {
       <h1>Welcome back</h1>
       <p className="muted">Sign in to your supply chain workspace.</p>
       <form onSubmit={handleSubmit} className="stack">
+        <p className="muted">Demo login: admin@sami-tech.com / Admin1234!</p>
         <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required />
         <input name="password" type="password" placeholder="Password" value={form.password} onChange={handleChange} required />
         {error ? <p className="error">{error}</p> : null}

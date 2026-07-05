@@ -81,11 +81,11 @@ const shipmentSchema = new mongoose.Schema(
 );
 
 // Pre-save: push to status history when currentStatus changes
-shipmentSchema.pre('save', function (next) {
+shipmentSchema.pre('save', function () {
   if (this.isModified('currentStatus') || this.isNew) {
-    this.statusHistory.push({ status: this.currentStatus });
+    this.statusHistory.push({
+      status: this.currentStatus,
+    });
   }
-  next();
 });
-
 module.exports = mongoose.model('Shipment', shipmentSchema);

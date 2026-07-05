@@ -52,6 +52,11 @@ button {
   cursor: pointer;
 }
 
+.secondary-btn {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
 .main-content {
   flex: 1;
   padding: 24px;
@@ -130,10 +135,29 @@ button {
   margin-top: 16px;
 }
 
-input {
+.page-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+input,
+select,
+textarea {
   padding: 10px 12px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
+  font: inherit;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #334155;
+  font-size: 0.95rem;
 }
 
 .error {

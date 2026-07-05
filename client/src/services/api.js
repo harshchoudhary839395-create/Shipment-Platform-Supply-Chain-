@@ -8,9 +8,18 @@ api.interceptors.request.use(config => {
   return config;
 });
 
-export const getVendors    = () => api.get('/vendors');
-export const getShipments  = () => api.get('/shipments');
-export const getInventory  = () => api.get('/inventory');
-export const getSummary    = () => api.get('/analytics/summary');
-export const updateStatus  = (id, status) => api.patch(`/shipments/${id}`, { status });
-export const addMovement   = (id, data)   => api.post(`/inventory/${id}/movement`, data);
+export const getVendors = () => api.get('/vendors');
+export const createVendor = (data) => api.post('/vendors', data);
+export const updateVendor = (id, data) => api.put(`/vendors/${id}`, data);
+
+export const getShipments = () => api.get('/shipments');
+export const createShipment = (data) => api.post('/shipments', data);
+export const updateShipment = (id, data) => api.put(`/shipments/${id}`, data);
+
+export const getInventory = () => api.get('/inventory');
+export const createInventory = (data) => api.post('/inventory', data);
+export const updateInventory = (id, data) => api.put(`/inventory/${id}`, data);
+
+export const getSummary = () => api.get('/analytics/summary');
+export const updateStatus = (id, status) => api.patch(`/shipments/${id}/status`, { status });
+export const addMovement = (id, data) => api.post(`/inventory/${id}/movement`, data);
