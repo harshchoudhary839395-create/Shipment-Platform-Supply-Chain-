@@ -66,6 +66,7 @@ const shipmentSchema = new mongoose.Schema(
       type: Date,
     },
     actualDeliveryDate: {
+      
       type: Date,
     },
     carrier: {

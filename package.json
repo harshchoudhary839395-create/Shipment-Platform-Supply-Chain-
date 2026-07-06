@@ -1,7 +1,7 @@
 {
-  "name": "sami-tech-supply-tracker-server",
+  "name": "shipment-management-database-server",
   "version": "1.0.0",
-  "description": "Backend API for Sami Tech Supply Tracker",
+  "description": "Backend API for Shipment Management Database",
   "main": "server.js",
  "scripts": {
   "dev": "nodemon server.js",
