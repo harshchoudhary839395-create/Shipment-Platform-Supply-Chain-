@@ -20,8 +20,8 @@ export default function Layout() {
     <div className="app-shell">
       <aside className="sidebar">
         <div>
-          <h2 className="brand">Sami Tech</h2>
-          <p className="brand-subtitle">Supply Tracker</p>
+          <h2 className="brand">Supply Chain</h2>
+          <p className="brand-subtitle">Supply Chain</p>
         </div>
         <nav className="nav-links">
           {navItems.map((item) => (
